@@ -29,15 +29,15 @@ A guided project to implement a Merkle Airdrop smart contract system. This proje
     ```
 3. **Run tests**:
     ```bash
-    forge test
+    forge test -vv
     ```
 4. **Deploy contracts**:
     ```bash
-    forge script script/DeployMerkleAirdrop.s.sol --fork-url <network-url> --broadcast
+    forge script script/DeployMerkleAirdrop.s.sol --rpc-url <network-url> --broadcast
     ```
 5. **Claim tokens**:
     ```bash
-    forge script script/ClaimAirdrop.s.sol --fork-url <network-url> --broadcast
+    forge script script/ClaimAirdrop.s.sol --rpc-url <network-url> --broadcast
     ```
 ## Structure
 - **src/**: Contains the main smart contracts (MerkleAirdrop.sol, BagelToken.sol).
