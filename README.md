@@ -19,10 +19,10 @@ A guided project to implement a Merkle Airdrop smart contract system. This proje
 
 ## Installation and Usage
 1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/emtothed/merkle-airdrop-foundry.git
-   cd merkle-airdrop-foundry
-   ‍```
+    ```bash
+    git clone https://github.com/emtothed/merkle-airdrop-foundry.git
+    cd merkle-airdrop-foundry
+    ```
 2. **Install dependencies**:
     ```bash
     forge install
