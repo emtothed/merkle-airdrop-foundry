@@ -1,66 +1,53 @@
-## Foundry
+# Merkle Airdrop
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A guided project to implement a Merkle Airdrop smart contract system. This project allows token distribution using Merkle proofs for efficient and secure claiming.
 
-Foundry consists of:
+## Features
+- **MerkleAirdrop Contract**: Enables users to claim their tokens if they are part of a Merkle tree.
+- **BagelToken Contract**: A sample ERC20 token used for the airdrop.
+- **GenerateInput Script**: This script generates a JSON file containing addresses and their corresponding values as input for building a Merkle Tree. This file serves as the basis for creating Merkle Proofs.
+- **MakeMerkle Script**: This script uses the input JSON file to construct a Merkle Tree, generate Merkle Proofs along with the Root and Leaf nodes, and stores the results in a JSON output file.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- **Deployment Script**: Deploys both `MerkleAirdrop` and `BagelToken` contracts and transfers tokens to the airdrop contract.
+- **Claim Script**: Demonstrates how to claim tokens using valid proofs and signatures.
+- **Testing Suite**: Includes test cases to verify the correctness of the airdrop mechanism.
 
-## Documentation
+## Technology Stack
+- **Solidity**: Smart contract programming language.
+- **Foundry**: Development and testing framework.
+- **OpenZeppelin Contracts**: Standard libraries for security and utility.
 
-https://book.getfoundry.sh/
+## Installation and Usage
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/emtothed/merkle-airdrop-foundry.git
+   cd merkle-airdrop-foundry
+   ‍```
+2. **Install dependencies**:
+    ```bash
+    forge install
+    ```
+3. **Run tests**:
+    ```bash
+    forge test
+    ```
+4. **Deploy contracts**:
+    ```bash
+    forge script script/DeployMerkleAirdrop.s.sol --fork-url <network-url> --broadcast
+    ```
+5. **Claim tokens**:
+    ```bash
+    forge script script/ClaimAirdrop.s.sol --fork-url <network-url> --broadcast
+    ```
+## Structure
+- **src/**: Contains the main smart contracts (MerkleAirdrop.sol, BagelToken.sol).
+- **script/**: Deployment and claim scripts.
+- **test/**: Unit tests for the contracts.
+  
+## Notes
+This project was created as part of a guided learning experience to explore the Merkle proof-based airdrop mechanism.
 
-## Usage
+## License
+This project is licensed under the MIT License.
 
-### Build
 
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
